@@ -98,8 +98,11 @@ angular.module('selectionModel').directive('selectionModel', [
          */
         var repeatLine = attrs.ngRepeat;
         if(!repeatLine) {
+                    repeatLine = attrs.dirPaginate;
+                    if (!repeatLine) {
           throw 'selectionModel must be used along side ngRepeat';
         }
+                }
 
         /**
          * The list of selected items
